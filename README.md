@@ -19,6 +19,17 @@ features
 The illustration of AutoInt. We first projects all sparse features
 (both categorical and numerical features) into the low-dimensional space. Next, we feed embeddings of all fields into a interacting layer implemented by self-attentive neural network. The output of the final interacting layer is the low-dimensional representation of the input feature, which is further used for estimating the CTR via sigmoid function.
 
+## Usage
+### Input Format
+The implementation requires the input data in the following format:
+* train_x: matrix with shape *(num_sample, num_field)*. train_x[s][t] is the feature value of feature field t of sample s in the dataset. The default value for categorical feature is 1.
+* train_i: matrix with shape *(num_sample, num_field)*. train_i[s][t] is the feature index of feature field t of sample s in the dataset. The maximal value of train_i is the feature size.
+* train_y: label of each sample in the dataset.
+
+
+
+### 
+
 
 
 ## acknowledgement
