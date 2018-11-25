@@ -26,11 +26,11 @@ The implementation requires the input data in the following format:
 * train_i: matrix with shape *(num_sample, num_field)*. train_i[s][t] is the feature index of feature field t of sample s in the dataset. The maximal value of train_i is the feature size.
 * train_y: label of each sample in the dataset.
 
-
+If you want to know how to preprocess the data, please refer to `./Dataprocess/Criteo/preprocess.py`
 
 ### 
 
 
 
-## acknowledgement
+## Acknowledgement
 This code is based on the [previous work by Kyubyong](https://github.com/Kyubyong/transformer). Many thanks to [Kyubyong Park](https://github.com/Kyubyong).
