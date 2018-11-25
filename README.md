@@ -28,7 +28,8 @@ The implementation requires the input data in the following format:
 
 If you want to know how to preprocess the data, please refer to `./Dataprocess/Criteo/preprocess.py`
 
-### 
+### Example
+We use four public real-world datasets(Avazu, Criteo, KDD12, MovieLens-1M) in our experiment. Since the first three datasets are super huge, they can not be fit into the memory as a whole. In our implementation, we split the whole dataset into 10 parts and we use the first file as test set and the second file as valid set. We provide the codes for preprocessing these three datasets in `./Dataprocess`. If you want to reuse these code, you should first run `preprocess.py` to generate `train_x.npy, train_i.npy, train_y.npy` as described in `Input Format`. Then you should run `./Dataprocesss/Kfold_split/StratifiedKfold.py` to split the whole dataset into ten folds. Finally you can run `scale.py` to scale the numerical value(not necessary).
 
 
 
