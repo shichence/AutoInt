@@ -417,77 +417,7 @@ class AutoInt():
         else:
             return True
 
-    '''
-    def fit(self, Xi_train, Xv_train, y_train,
-            epoch, file_count,Xi_valid=None, 
-	        Xv_valid=None, y_valid=None,
-            early_stopping=False, refit=False):
-        
-        
-        has_valid = Xv_valid is not None
-        last_step = 0
-        for _ in range(1):
-            t1 = time()
-            self.shuffle_in_unison_scary(Xi_train, Xv_train, y_train)
-            total_batch = int(len(y_train) / self.batch_size)
-            for i in range(total_batch):
-                Xi_batch, Xv_batch, y_batch = self.get_batch(Xi_train, Xv_train, y_train, self.batch_size, i)
-                step, loss = self.fit_on_batch(Xi_batch, Xv_batch, y_batch)
-                last_step = step
 
-            # evaluate training and validation datasets
-            train_result, train_loss = self.evaluate(Xi_train, Xv_train, y_train)
-            self.train_result.append(train_result)
-            self.train_loss.append(train_loss)
-            if has_valid:
-                valid_result, valid_loss = self.evaluate(Xi_valid, Xv_valid, y_valid)
-                self.valid_result.append(valid_result)
-                self.valid_loss.append(valid_loss)
-                if valid_loss < self.best_loss and self.is_save == True:
-                    self.best_loss = valid_loss
-                    self.saver.save(self.sess, self.save_path + 'model.ckpt',global_step=epoch)
-            #if (self.is_save == True):
-            #    self.saver.save(self.sess, self.save_path + 'model.ckpt',global_step=epoch)
-
-            if self.verbose > 0 and ((epoch-1)*9 + file_count) % self.verbose == 0:
-                if has_valid:
-                    print("[%d-%d] train-result=%.4f, train-logloss=%.4f, valid-result=%.4f, valid-logloss=%.4f [%.1f s]"
-                        % (epoch, file_count, train_result, train_loss, valid_result, valid_loss, time() - t1))
-                else:
-                    print("[%d-%d] train-result=%.4f [%.1f s]"
-                        % (epoch, file_count, train_result, time() - t1))
-            if has_valid and early_stopping and self.training_termination(self.valid_loss):
-                break
-    '''
-
-
-    '''
-        # fit a few more epoch on train+valid until result reaches the best_train_score
-        if has_valid and refit:
-            if self.greater_is_better:
-                best_valid_score = max(self.valid_result)
-            else:
-                best_valid_score = min(self.valid_result)
-            best_epoch = self.valid_result.index(best_valid_score)
-            best_train_score = self.train_result[best_epoch]
-            Xi_train = Xi_train + Xi_valid
-            Xv_train = Xv_train + Xv_valid
-            y_train = y_train + y_valid
-            for epoch in range(100):
-                self.shuffle_in_unison_scary(Xi_train, Xv_train, y_train)
-                total_batch = int(len(y_train) / self.batch_size)
-                for i in range(total_batch):
-                    Xi_batch, Xv_batch, y_batch = self.get_batch(Xi_train, Xv_train, y_train,
-                                                                self.batch_size, i)
-                    self.fit_on_batch(Xi_batch, Xv_batch, y_batch)
-                # check
-                train_result = self.evaluate(Xi_train, Xv_train, y_train)
-                if abs(train_result - best_train_score) < 0.001 or \
-                    (self.greater_is_better and train_result > best_train_score) or \
-                    ((not self.greater_is_better) and train_result < best_train_score):
-                    break
-    '''           
-        
 
     def training_termination(self, valid_result):
         if len(valid_result) > 5:
