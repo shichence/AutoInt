@@ -17,6 +17,7 @@ from tensorflow.contrib.layers.python.layers import batch_norm as batch_norm
 
 '''
 The following two functions are adapted from kyubyong park's implementation of transformer
+We slightly modify the code to make it suitable for our work.(add relu, delete key masking and causality mask)
 June 2017 by kyubyong park. 
 kbpark.linguist@gmail.com.
 https://www.github.com/kyubyong/transformer
@@ -52,6 +53,7 @@ def multihead_attention(queries,
                         dropout_keep_prob=1,
                         is_training=True,
                         has_residual=True):
+	
     if num_units is None:
         num_units = queries.get_shape().as_list[-1]
 
