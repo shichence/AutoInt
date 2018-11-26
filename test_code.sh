@@ -5,6 +5,7 @@ python -u train.py \
                        --is_save "True" --save_path "./test_code/Criteo/b3h2_64x64x64/"  \
                        --field_size 39  --run_times 1 --data_path "./" \
                        --epoch 3 --has_residual "True"  --has_wide "False" \
+                       --batch_size 128 \
                        > test_code_single.out &
 
 
@@ -13,4 +14,5 @@ python -u train.py \
                        --is_save "True" --save_path "./test_code/Criteo/b3h2_dnn_dropkeep1_400x2/"  \
                        --field_size 39  --run_times 1 --dropout_keep_prob "[1, 1, 1]" --data_path "./" \
                        --epoch 3 --has_residual "True"  --has_wide "False"  --deep_layers "[400, 400]"\
+                       --batch_size 128 \
                        > ./test_code_dnn.out &
