@@ -1,9 +1,8 @@
 '''
 Tensorflow implementation of AutoInt described in:
 AutoInt: Automatic Feature Interaction Learning via Self-Attentive Neural Networks.
-
-@author: 
-Chence Shi (chenceshi@pku.edu.cn)
+author: Chence Shi
+email: chenceshi@pku.edu.cn
 '''
 
 import os
@@ -13,6 +12,15 @@ from time import time
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.metrics import roc_auc_score, log_loss
 from tensorflow.contrib.layers.python.layers import batch_norm as batch_norm
+
+
+
+'''
+The following two functions are adapted from kyubyong park's implementation of transformer
+June 2017 by kyubyong park. 
+kbpark.linguist@gmail.com.
+https://www.github.com/kyubyong/transformer
+'''
 
 
 def normalize(inputs, epsilon=1e-8):
