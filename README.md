@@ -79,7 +79,14 @@ If you find AutoInt useful for your research, please consider citing the followi
   year={2018}
 }
 ```
+If we submit the paper to a conference, we will update the BibTeX.
 
+
+## Contact information
+If you have questions related to the code, please contact Chence Shi(`chenceshi@pku.edu.cn`) and Zhijian Duan(`zjduan@pku.edu.cn`).
+
+## License
+MIT
 
 ## Acknowledgement
 This code is based on the previous work by [Kyubyong](https://github.com/Kyubyong/transformer) and [ChenglongChen](https://github.com/ChenglongChen/tensorflow-DeepFM). Many thanks to [Kyubyong Park](https://github.com/Kyubyong) and [ChenglongChen](https://github.com/ChenglongChen).
