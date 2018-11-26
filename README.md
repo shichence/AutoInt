@@ -71,4 +71,4 @@ avg_log_loss 0.44297631300399626
 
 
 ## Acknowledgement
-This code is based on the [previous work by Kyubyong](https://github.com/Kyubyong/transformer). Many thanks to [Kyubyong Park](https://github.com/Kyubyong).
+This code is based on the previous work by [Kyubyong](https://github.com/Kyubyong/transformer) and [ChenglongChen](https://github.com/ChenglongChen/tensorflow-DeepFM). Many thanks to [Kyubyong Park](https://github.com/Kyubyong) and [ChenglongChen](https://github.com/ChenglongChen).
