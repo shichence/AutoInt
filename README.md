@@ -68,6 +68,16 @@ avg_auc 0.8088305055534442
 avg_log_loss 0.44297631300399626
 ```
 
+## Citing
+If you find AutoInt useful for your research, please consider citing the following paper:
+```
+@article{weiping2018autoint,
+  title={AutoInt: Automatic Feature Interaction Learning via Self-Attentive Neural Networks},
+  author={Weiping, Song and Chence, Shi and Zhiping, Xiao and Zhijian, Duan and Yewen, Xu and Ming, Zhang and Jian, Tang},
+  journal={arXiv preprint arXiv:1810.11921},
+  year={2018}
+}
+```
 
 
 ## Acknowledgement
