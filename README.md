@@ -1,6 +1,9 @@
 # AutoInt
 
-Code for the paper [AutoInt: Automatic Feature Interaction Learning via Self-Attentive Neural Networks](https://arxiv.org/pdf/1810.11921.pdf).
+This is a TenforFlow implementation of ***AutoInt*** for CTR prediction task, as described in our paper:
+```
+Weiping Song, Chence Shi, Zhijian Duan, Yewen Xu, Ming Zhang and Jian Tang. [AutoInt: Automatic Feature Interaction Learning via Self-Attentive Neural Networks](https://arxiv.org/pdf/1810.11921.pdf).
+```
 
 ## Requirements: 
 * **Tensorflow 1.4.0-rc1**
@@ -30,7 +33,7 @@ If you want to know how to preprocess the data, please refer to `./Dataprocess/C
 ### Example
 We use four public real-world datasets(Avazu, Criteo, KDD12, MovieLens-1M) in our experiment. Since the first three datasets are super huge, they can not be fit into the memory as a whole. In our implementation, we split the whole dataset into 10 parts and we use the first file as test set and the second file as valid set. We provide the codes for preprocessing these three datasets in `./Dataprocess`. If you want to reuse these code, you should first run `preprocess.py` to generate `train_x.txt, train_i.txt, train_y.txt` as described in `Input Format`. Then you should run `./Dataprocesss/Kfold_split/StratifiedKfold.py` to split the whole dataset into ten folds. Finally you can run `scale.py` to scale the numerical value(optional).
 
-To help test the correctness of the code and familarize youself with the code, we upload the first `10000` samples of `Criteo` dataset in `train_examples.txt`. And we provide the scripts for preprocessing and training.(Please refer to `	sample_preprocess.sh` and `test_code.sh`, you may need to modify the path in `config.py` and `test_code.sh`). 
+To help test the correctness of the code and familarize yourself with the code, we upload the first `10000` samples of `Criteo` dataset in `train_examples.txt`. And we provide the scripts for preprocessing and training.(Please refer to `	sample_preprocess.sh` and `test_code.sh`, you may need to modify the path in `config.py` and `test_code.sh`). 
 
 After you run the `test_code.sh`, you should get a folder named `Criteo` which contains `part*, feature_size.npy, fold_index.npy, train_*.txt`. `feature_size.npy` contains the number of total features which will be used to initialize the model. `train_*.txt` is the whole dataset. If you use other small dataset, say `MovieLens-1M`, you only need to modify the function `_run_` in `train.py`.
 
@@ -68,7 +71,7 @@ avg_auc 0.8088305055534442
 avg_log_loss 0.44297631300399626
 ```
 
-## Citing
+## Citation
 If you find AutoInt useful for your research, please consider citing the following paper:
 ```
 @article{weiping2018autoint,
@@ -81,10 +84,10 @@ If you find AutoInt useful for your research, please consider citing the followi
 
 
 ## Contact information
-If you have questions related to the paper or code, feel free to contact Weiping Song (`songweiping@pku.edu.cn`), Chence Shi(`chenceshi@pku.edu.cn`) and Zhijian Duan(`zjduan@pku.edu.cn`).
+If you have questions related to the code, feel free to contact Weiping Song (`songweiping@pku.edu.cn`), Chence Shi (`chenceshi@pku.edu.cn`) and Zhijian Duan (`zjduan@pku.edu.cn`).
 
 ## License
 MIT
 
 ## Acknowledgement
-This code is based on the previous work by [Kyubyong](https://github.com/Kyubyong/transformer) and [ChenglongChen](https://github.com/ChenglongChen/tensorflow-DeepFM). Many thanks to [Kyubyong Park](https://github.com/Kyubyong) and [ChenglongChen](https://github.com/ChenglongChen).
+This implementation gets inspirations from Kyubyong Park's [transformer](https://github.com/Kyubyong/transformer) and Chenglong Chen' [DeepFM](https://github.com/ChenglongChen/tensorflow-DeepFM).
