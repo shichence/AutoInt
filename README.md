@@ -17,8 +17,8 @@ automatically learn high-order feature interactions for (sparse) categorical and
 <div align=center>
   <img src="https://github.com/shichence/AutoInt/blob/master/figures/model.png" width = 50% height = 50% />
 </div>
-The illustration of AutoInt. We first projects all sparse features
-(both categorical and numerical features) into the low-dimensional space. Next, we feed embeddings of all fields into an interacting layer implemented by self-attentive neural network. The output of the final interacting layer is low-dimensional representation of learnt combinatorial features, which is further used for estimating the CTR via sigmoid function.
+The illustration of AutoInt. We first project all sparse features
+(both categorical and numerical features) into the low-dimensional space. Next, we feed embeddings of all fields into stacked multiple interacting layers implemented by self-attentive neural network. The output of the final interacting layer is the low-dimensional representation of learnt combinatorial features, which is further used for estimating the CTR via sigmoid function.
 
 ## Usage
 ### Input Format
@@ -30,7 +30,7 @@ AutoInt requires the input data in the following format:
 If you want to know how to preprocess the data, please refer to `./Dataprocess/Criteo/preprocess.py`
 
 ### Example
-We use four public real-world datasets(Avazu, Criteo, KDD12, MovieLens-1M) in our experiment. Since the first three datasets are super huge, they can not be fit into the memory as a whole. In our implementation, we split the whole dataset into 10 parts and we use the first file as test set and the second file as valid set. We provide the codes for preprocessing these three datasets in `./Dataprocess`. If you want to reuse these code, you should first run `preprocess.py` to generate `train_x.txt, train_i.txt, train_y.txt` as described in `Input Format`. Then you should run `./Dataprocesss/Kfold_split/StratifiedKfold.py` to split the whole dataset into ten folds. Finally you can run `scale.py` to scale the numerical value(optional).
+We use four public real-world datasets(Avazu, Criteo, KDD12, MovieLens-1M) in our experiments. Since the first three datasets are super huge, they can not be fit into the memory as a whole. In our implementation, we split the whole dataset into 10 parts and we use the first file as test set and the second file as valid set. We provide the codes for preprocessing these three datasets in `./Dataprocess`. If you want to reuse these codes, you should first run `preprocess.py` to generate `train_x.txt, train_i.txt, train_y.txt` as described in `Input Format`. Then you should run `./Dataprocesss/Kfold_split/StratifiedKfold.py` to split the whole dataset into ten folds. Finally you can run `scale.py` to scale the numerical value(optional).
 
 To help test the correctness of the code and familarize yourself with the code, we upload the first `10000` samples of `Criteo` dataset in `train_examples.txt`. And we provide the scripts for preprocessing and training.(Please refer to `	sample_preprocess.sh` and `test_code.sh`, you may need to modify the path in `config.py` and `test_code.sh`). 
 
