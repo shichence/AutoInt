@@ -51,7 +51,7 @@ python -u train.py \
                        --is_save "True" --save_path "./test_code/Criteo/b3h2_64x64x64/"  \
                        --field_size 39  --run_times 1 --data_path "./" \
                        --epoch 3 --has_residual "True"  --has_wide "False" \
-                       --batch_size 128 \
+                       --batch_size 1024 \
                        > test_code_single.out &
 ```
 
