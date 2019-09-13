@@ -1,3 +1,6 @@
+# Note
+  We have moved the repo to [https://github.com/DeepGraphLearning/RecommenderSystems/tree/master/featureRec](https://github.com/DeepGraphLearning/RecommenderSystems/tree/master/featureRec). Please check out the latest version there.
+
 # AutoInt
 
 This is a TenforFlow implementation of ***AutoInt*** for CTR prediction task, as described in our paper:
